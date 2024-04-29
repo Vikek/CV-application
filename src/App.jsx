@@ -3,6 +3,7 @@ import './App.css'
 import GeneralInfo from './components/GeneralInfo'
 import Education from './components/Education';
 import JobExperience from './components/JobExperience';
+import CvSection from './components/CvSection';
 
 function App() {
     const [generalInfo, setGeneralInfo] = useState({name: '', email: '', number: '', address: ''});
@@ -27,21 +28,9 @@ function App() {
     return (
         <div>
             <GeneralInfo handleChange={handleChangeGeneralInfo}/>
-            <div>{generalInfo.name}</div>
-            <div>{generalInfo.email}</div>
-            <div>{generalInfo.number}</div>
-            <div>{generalInfo.address}</div>
             <Education handleChange={handleChangeEducation}/>
-            <div>{educationInfo.school}</div>
-            <div>{educationInfo.degree}</div>
-            <div>{educationInfo.startDate}</div>
-            <div>{educationInfo.endDate}</div>
             <JobExperience handleChange={handleChangeJobExperience}/>
-            <div>{jobExperienceInfo.companyName}</div>
-            <div>{jobExperienceInfo.jobTitle}</div>
-            <div>{jobExperienceInfo.startDate}</div>
-            <div>{jobExperienceInfo.endDate}</div>
-            <div>{jobExperienceInfo.description}</div>
+            <CvSection generalInfo={generalInfo} educationInfo={educationInfo} jobExperienceInfo={jobExperienceInfo}/>
         </div>
     )
 }
