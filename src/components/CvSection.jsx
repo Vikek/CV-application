@@ -1,7 +1,7 @@
-function CvSection({generalInfo, educationInfo, jobExperienceInfo}) {
+function CvSection({generalInfo, educationCurrent, educations, jobExperienceCurrent, jobExperiences}) {
     return (
         <div className="cv-section">
-            <div className="banner-section">
+            <div className="cv-banner">
                 <h1>{generalInfo.name}</h1>
                 <div className="contact-info">
                     <div className="email">{generalInfo.email}</div>
@@ -12,22 +12,47 @@ function CvSection({generalInfo, educationInfo, jobExperienceInfo}) {
             <div className="cv-content">
                 <div className="education-section">
                     <h3>Education</h3>
-                    <div className="date">
-                        {educationInfo.startDate}
-                        {educationInfo.endDate}
+                    <div className="education-current">
+                        <div className="date">
+                            {educationCurrent.startDate}
+                            {educationCurrent.endDate}
+                        </div>
+                        <div className="school">{educationCurrent.school}</div>
+                        <div className="degree">{educationCurrent.degree}</div>
                     </div>
-                    <div className="school">{educationInfo.school}</div>
-                    <div className="degree">{educationInfo.degree}</div>
+                    {educations.map((education, index) => (
+                        <div key={index} className="education-saved">
+                            <div className="date">
+                                {education.startDate}
+                                {education.endDate}
+                            </div>
+                            <div className="school">{education.school}</div>
+                            <div className="degree">{education.degree}</div>
+                        </div>
+                    ))}
                 </div>
                 <div className="experience-section">
                     <h3>Experience</h3>
-                    <div className="date">
-                        {jobExperienceInfo.startDate}
-                        {jobExperienceInfo.endDate}
+                    <div className="experience-current">
+                        <div className="date">
+                            {jobExperienceCurrent.startDate}
+                            {jobExperienceCurrent.endDate}
+                        </div>
+                        <div className="company-name">{jobExperienceCurrent.companyName}</div>
+                        <div className="job-title">{jobExperienceCurrent.jobTitle}</div>
+                        <div className="description">{jobExperienceCurrent.description}</div>
                     </div>
-                    <div className="company-name">{jobExperienceInfo.companyName}</div>
-                    <div className="job-title">{jobExperienceInfo.jobTitle}</div>
-                    <div className="description">{jobExperienceInfo.description}</div>
+                    {jobExperiences.map((jobExperience, index) => (
+                        <div key={index} className="experience-saved">
+                            <div className="date">
+                                {jobExperience.startDate}
+                                {jobExperience.endDate}
+                            </div>
+                            <div className="company-name">{jobExperience.companyName}</div>
+                            <div className="job-title">{jobExperience.jobTitle}</div>
+                            <div className="description">{jobExperience.description}</div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

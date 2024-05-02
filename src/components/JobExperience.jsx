@@ -1,6 +1,6 @@
-function JobExperience ({handleChange}) {
+function JobExperience({handleChange, handleSubmit}) {
     return (
-        <form className="job-experience-form">
+        <form className="job-experience-form" onSubmit={handleSubmit}>
             <h2>Job Experience</h2>
             <div className="form-section">
                 <label htmlFor="companyName">Company name</label>
@@ -22,6 +22,7 @@ function JobExperience ({handleChange}) {
                 <label htmlFor="description">Description</label>
                 <input type="text" id="description" placeholder="Enter descripton" onChange={handleChange}/>
             </div>
+            <button type="submit">Save</button>
         </form>
     )
 }
