@@ -14,8 +14,8 @@ function CvSection({generalInfo, educationCurrent, educations, jobExperienceCurr
                     <h3>Education</h3>
                     <div className="education-current">
                         <div className="date">
-                            {educationCurrent.startDate}
-                            {educationCurrent.endDate}
+                            <div className="date-start">{educationCurrent.startDate}</div>
+                            <div className="date-end">{educationCurrent.endDate}</div>
                         </div>
                         <div className="school">{educationCurrent.school}</div>
                         <div className="degree">{educationCurrent.degree}</div>
@@ -23,8 +23,8 @@ function CvSection({generalInfo, educationCurrent, educations, jobExperienceCurr
                     {educations.map((education, index) => (
                         <div key={index} className="education-saved">
                             <div className="date">
-                                {education.startDate}
-                                {education.endDate}
+                                <div className="date-start">{education.startDate}</div>
+                                <div className="date-end">{education.endDate}</div>
                             </div>
                             <div className="school">{education.school}</div>
                             <div className="degree">{education.degree}</div>
@@ -35,8 +35,8 @@ function CvSection({generalInfo, educationCurrent, educations, jobExperienceCurr
                     <h3>Experience</h3>
                     <div className="experience-current">
                         <div className="date">
-                            {jobExperienceCurrent.startDate}
-                            {jobExperienceCurrent.endDate}
+                            <div className="date-start">{jobExperienceCurrent.startDate}</div>
+                            <div className="date-end">{jobExperienceCurrent.endDate}</div>
                         </div>
                         <div className="company-name">{jobExperienceCurrent.companyName}</div>
                         <div className="job-title">{jobExperienceCurrent.jobTitle}</div>
@@ -45,8 +45,8 @@ function CvSection({generalInfo, educationCurrent, educations, jobExperienceCurr
                     {jobExperiences.map((jobExperience, index) => (
                         <div key={index} className="experience-saved">
                             <div className="date">
-                                {jobExperience.startDate}
-                                {jobExperience.endDate}
+                                <div className="date-start">{jobExperience.startDate}</div>
+                                <div className="date-end">{jobExperience.endDate}</div>
                             </div>
                             <div className="company-name">{jobExperience.companyName}</div>
                             <div className="job-title">{jobExperience.jobTitle}</div>

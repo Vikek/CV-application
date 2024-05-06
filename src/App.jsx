@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import './styles/App.css'
 import GeneralInfo from './components/GeneralInfo'
 import Education from './components/Education';
 import JobExperience from './components/JobExperience';
@@ -48,11 +48,15 @@ function App() {
     }
 
     return (
-        <div>
-            <GeneralInfo handleChange={handleChangeGeneralInfo}/>
-            <Education handleChange={handleChangeEducation} handleSubmit={handleSubmitEducation}/>
-            <JobExperience handleChange={handleChangeJobExperience} handleSubmit={handleSubmitJobExperience}/>
-            <CvSection generalInfo={generalInfo} educationCurrent={educationInfo} educations={educations} jobExperienceCurrent={jobExperienceInfo} jobExperiences={jobExperiences}/>
+        <div className='app'>
+            <div className='sidebar'>
+                <GeneralInfo handleChange={handleChangeGeneralInfo}/>
+                <Education handleChange={handleChangeEducation} handleSubmit={handleSubmitEducation}/>
+                <JobExperience handleChange={handleChangeJobExperience} handleSubmit={handleSubmitJobExperience}/>
+            </div>
+            <div className='content'>
+                <CvSection generalInfo={generalInfo} educationCurrent={educationInfo} educations={educations} jobExperienceCurrent={jobExperienceInfo} jobExperiences={jobExperiences}/>
+            </div>
         </div>
     )
 }
